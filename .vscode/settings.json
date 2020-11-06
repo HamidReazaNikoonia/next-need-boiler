@@ -1,0 +1,10 @@
+{
+    "i18n-ally.localesPaths": [
+        "documentation/website/i18n",
+        "public/static/locales"
+    ],
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+        }
+      
+}
