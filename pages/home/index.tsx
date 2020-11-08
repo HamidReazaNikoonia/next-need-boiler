@@ -19,7 +19,7 @@ import {
 } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
-import { Heading, LocaleButton } from "@Components";
+import { Heading, LocaleButton, Hamid } from "@Components";
 // #endregion Local Imports
 
 // #region Interface Imports
@@ -45,6 +45,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
 
     return (
         <Container>
+            <Hamid />
             <Top>
                 <img src="/images/pankod-logo.png" alt="Pankod Logo" />
             </Top>

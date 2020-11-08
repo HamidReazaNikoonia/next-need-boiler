@@ -1,0 +1,43 @@
+// GRID
+$size-grid-padding: 1.3rem;
+
+// CONTENT
+$size-content-width-max: 50rem;
+$size-content-width-min: 25rem;
+
+// INPUTS
+$size-input-padding-vertical: 0.75em;
+$size-input-padding-horizontal: 1em;
+$size-input-padding: $size-input-padding-vertical $size-input-padding-horizontal;
+$size-input-border: 1px;
+$size-input-border-radius: (1em + $size-input-padding-vertical * 2) / 10;
+
+// BUTTONS
+$size-button-padding-vertical: $size-grid-padding / 2;
+$size-button-padding-horizontal: $size-grid-padding / 1.5;
+$size-button-padding: $size-button-padding-vertical
+  $size-button-padding-horizontal;
+
+//Border
+$border-radius-base: 1.3em;
+$border-radius-circle: 100%;
+
+// Fonts
+$font-size-small: 1.1em;
+$font-size-x-small: 0.9em;
+
+// Spaces
+$space-base: 4px;
+$space-x-large: 12px;
+
+// Responsive
+$xs: 480;
+$sm: 600;
+$md: 768;
+$lg: 1024;
+$xl: 1200;
+$media-query-x-small: '(min-width: 480px)';
+$media-query-small: '(min-width: 600px)';
+$media-query-medium: '(min-width: 768px)';
+$media-query-large: '(min-width: 1024px)';
+$media-query-x-large: '(min-width: 1200px)';

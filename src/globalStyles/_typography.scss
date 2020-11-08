@@ -1,0 +1,85 @@
+/* Typography MIXINS
+--------------------------------------------- */
+
+
+/* Default Breakpoint  */
+$breakpoints: (
+  small : 480px,
+  medium: 700px,
+  large : 1024px
+);
+
+
+
+/* AUTO SCALING FOR FONT SIZE
+  @param {List}  $fs-map        - List of responsive size like $p-font-sizes
+  @param {List}  $fs-breakpoints         - Breakpoints sizes for small, medium, ..
+ 
+ Example:
+ 
+ $p-font-sizes: (
+  null  : (15px, 1.3),
+  small : 16px,
+  medium: (17px, 1.4),
+  900px : 18px,
+  large : (19px, 1.45),
+  1440px: 20px,
+);
+ 
+ @include font-size($p-font-sizes);
+
+
+ Result:
+
+p { font-size: 15px; line-height: 1.3; }
+
+@media screen and (min-width: 480px) {
+  p { font-size: 16px; }
+}
+@media screen and (min-width: 700px) {
+  p { font-size: 17px; line-height: 1.4; }
+}
+@media screen and (min-width: 900px) {
+  p { font-size: 18px; }
+}
+@media screen and (min-width: 1024px) {
+  p { font-size: 19px; line-height: 1.45; }
+}
+@media screen and (min-width: 1440px) {
+  p { font-size: 20px; }
+}
+
+*/
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}

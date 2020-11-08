@@ -1,0 +1,174 @@
+/* GLOBAL FUNCTIONS
+--------------------------------------------- */
+
+// Create a tint
+//
+// @param  {Color}  $color to tint
+// @param  {Number} $percentage of `$color` in returned color
+// @return {Color}
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+  }
+  
+  // Create a shade
+  //
+  // @param  {Color}  $color to shade
+  // @param  {Number} $percentage of `$color` in returned color
+  // @return {Color}
+  @function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+  }
+  
+  // Calculate color difference
+  // See https://www.w3.org/TR/AERT/#color-contrast for algorithm
+  //
+  // @param  {Color} $color of foreground
+  // @param  {Color} $color of background
+  // @return {Boolean}
+  @function color-difference($foreground, $background) {
+    $r: (max(red($foreground), red($background))) -
+      (min(red($foreground), red($background)));
+    $g: (max(green($foreground), green($background))) -
+      (min(green($foreground), green($background)));
+    $b: (max(blue($foreground), blue($background))) -
+      (min(blue($foreground), blue($background)));
+    $sum-rgb: $r + $g + $b;
+  
+    @if $sum-rgb < 350 {
+      @return 'false';
+    } @else {
+      @return 'true';
+    }
+  }
+  
+  // Set text color based on contrast
+  //
+  // @param  {Color}  $color to set
+  // @param  {Color}  $background color to test
+  // @param  {Color}  $fallback color to set in case contrast check fails
+  @function set-text-color($color, $background, $fallback: null) {
+    @if $fallback == null {
+      $fallback: #000;
+    }
+    @if (color-difference($color, $background) == 'false') {
+      @return $fallback;
+    } @else {
+      @return $color;
+    }
+  }
+  
+  /// Darkens the foreground color by the background color. This is the same as the
+  /// “multiply” filter in graphics apps.
+  ///
+  /// @param {Color} $foreground - The color to darken.
+  /// @param {Color} $background - The background to base darkening on.
+  /// @return {Color} The modified color.
+  @function color-multiply($foreground, $background: null) {
+    @if $background == null {
+      $background: #ffffff;
+    }
+  
+    @return $foreground * $background / 255;
+  }
+  
+  /// Returns the value in rem for a given pixel value.
+  /// @param {Number} $value - The pixel value to be converted.
+  /// @return {Number} The converted value in rem.
+  @function rem($value) {
+    $unit: unit($value);
+  
+    @if $unit == 'rem' {
+      @return $value;
+    } @else if $unit == 'px' {
+      @return $value / $font-size-base * 1rem;
+    } @else if $unit == 'em' {
+      @return $unit / 1em * 1rem;
+    } @else {
+      @error "Value must be in px, em, or rem.";
+    }
+  }
+  
+  /// Returns the value in pixels for a given rem value.
+  /// @param {Number} $value - The rem value to be converted.
+  /// @return {Number} The converted value in pixels.
+  @function px($value) {
+    $unit: unit($value);
+  
+    @if $unit == 'px' {
+      @return $value;
+    } @else if $unit == 'em' {
+      @return ($value / 1em) * $font-size-base;
+    } @else if $unit == 'rem' {
+      @return ($value / 1rem) * $font-size-base;
+    } @else {
+      @error "Value must be in rem, em, or px.";
+    }
+  }
+
+
+
+// example
+// div::after { @include pseudo }
+
+  @mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+/* use this for creating scalable elements (usually images / background images) that maintain a ratio */
+// example
+// @include responsive-ratio(16,9);
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+  $padding: unquote( ( $y / $x ) * 100 + '%' );
+  @if $pseudo {
+      &:before {
+          @include pseudo($pos: relative);
+          width: 100%;
+          padding-top: $padding;
+      }
+  } @else {
+      padding-top: $padding;
+  }
+}
+
+
+
+
+/* Generate triangle  */
+
+///  @param {string} $color  specify it's colour
+///  @param {string} $direction the direction it's going to come out of your element
+///  @param {px} $size how big you want it 
+///  @param {px} $position position of triangle 
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+      border-radius: 3px;
+  }
+  @if $direction == down {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $color;
+      margin-top: 0 - round( $size / 2.5 );
+  } @else if $direction == up {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+      margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+      margin-right: -$size;
+  } @else if  $direction == left {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $color;
+      margin-left: -$size;
+  }
+}
