@@ -20,6 +20,7 @@ import {
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { Heading, LocaleButton, Hamid } from "@Components";
+import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
 // #region Interface Imports
@@ -46,6 +47,9 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     return (
         <Container>
             <Hamid />
+            <Button styles={{ margin: "20px" }} className="btn">
+                Click Here
+            </Button>
             <Top>
                 <img src="/images/pankod-logo.png" alt="Pankod Logo" />
             </Top>
