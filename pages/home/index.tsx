@@ -19,7 +19,7 @@ import {
 } from "@Styled/Home";
 import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
-import { Heading, LocaleButton, Hamid } from "@Components";
+import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
 import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
@@ -47,6 +47,11 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     return (
         <Container>
             <Hamid />
+            <Spinner
+                styles={{ opacity: "0.9" }}
+                emptyColor="green"
+                color="yellow"
+            />
             <Button styles={{ margin: "20px" }} className="btn">
                 Click Here
             </Button>
