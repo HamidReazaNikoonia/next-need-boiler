@@ -1,7 +1,7 @@
 // #region Global Imports
 import * as React from "react";
 import { NextPage } from "next";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 // #endregion Global Imports
 
 // #region Local Imports
@@ -17,7 +17,7 @@ import {
     Apod,
     ApodButton,
 } from "@Styled/Home";
-import { IStore } from "@Redux/IStore";
+// import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
 import { Button } from "@Components/Basic/Button";
@@ -31,7 +31,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     t,
     i18n,
 }) => {
-    const home = useSelector((state: IStore) => state.home);
+    // const home = useSelector((state: IStore) => state.home);
     const dispatch = useDispatch();
 
     const renderLocaleButtons = (activeLanguage: string) =>
@@ -51,13 +51,12 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                 styles={{ opacity: "0.9" }}
                 emptyColor="green"
                 color="yellow"
+                className="pt-5"
             />
             <Button styles={{ margin: "20px" }} className="btn">
                 Click Here
             </Button>
-            <Top>
-                <img src="/images/pankod-logo.png" alt="Pankod Logo" />
-            </Top>
+            <Top />
             <Middle>
                 <MiddleLeft>
                     <MiddleLeftButtons>
@@ -79,12 +78,12 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                         >
                             Discover Space
                         </ApodButton>
-                        <img
+                        {/* <img
                             src={home.image.url}
                             height="300"
                             width="150"
                             alt="Discover Space"
-                        />
+                        /> */}
                     </Apod>
                 </MiddleRight>
             </Middle>

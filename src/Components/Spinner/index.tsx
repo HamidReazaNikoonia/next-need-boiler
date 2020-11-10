@@ -40,7 +40,7 @@ export const Spinner: React.FunctionComponent<ISpinner.IProps> = (
         ...rest
     } = props;
 
-    const _className = cx("spinner", _styles.spinners);
+    const _className = cx("spinner", _styles.spinners, className);
 
     const Section = styled.div`
         display: inline-block;
