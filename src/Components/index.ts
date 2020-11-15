@@ -6,3 +6,4 @@ export { LocaleButton } from "@Components/LocaleButton";
 export { Hamid } from "@Components/Hamid";
 export { Spinner } from "@Components/Spinner";
 export { VisuallyHidden } from "@Components/VisuallyHidden";
+export { Input } from "@Components/Input";

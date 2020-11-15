@@ -1,0 +1,42 @@
+.input {
+    @apply appearance-none rounded-md py-2 text-sm px-3 mb-1 leading-loose;
+}
+
+.input:focus {
+    @apply outline-none;
+}
+
+.input::-webkit-input-placeholder {
+    @apply text-border-color text-sm;
+}
+
+.input:placeholder-shown {
+    @apply border-border-color;
+}
+
+.input-primary {
+    @apply  border border-main-color  text-gray-700 ; 
+}
+
+.input-disable {
+    @apply bg-border-color-ligth;    
+}
+
+.input-warning {
+    @apply border-red-warning #{!important};
+}
+
+.input-xs {
+    @apply text-xs;
+}
+
+.warningText {
+    font-size: 12px;
+    @apply text-red-warning
+}
+
+.input-xl {
+    @apply text-xl;
+  }
+
+

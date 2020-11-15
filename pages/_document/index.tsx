@@ -40,7 +40,13 @@ class WebAppDocument extends Document {
     render() {
         return (
             <Html>
-                <Head />
+                <Head>
+                    <link
+                        href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css"
+                        rel="stylesheet"
+                        type="text/css"
+                    />
+                </Head>
                 <body>
                     <Main />
                     <NextScript />

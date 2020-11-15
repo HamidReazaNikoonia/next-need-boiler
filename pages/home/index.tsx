@@ -20,6 +20,7 @@ import { withTranslation } from "@Server/i18n";
 // import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 // import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
+import { Input } from "@Components";
 // import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
@@ -47,6 +48,14 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     return (
         <div>
             <h1>Home Page</h1>
+            <div className=" w-1/2 pl-3 ml-40">
+                <Input
+                    warningText="لطفا نام خود را کامل وارد کنید"
+                    id="hey"
+                    label="نام"
+                    placeholder="نام خود را وارد کنید"
+                />
+            </div>
         </div>
     );
 };

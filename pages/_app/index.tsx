@@ -15,6 +15,7 @@ import { makeStore } from "@Redux";
 
 // import "@Static/css/main.scss";
 import "../../src/globalStyles/index.scss";
+// import "../../src/globalStyles/_theme.scss";
 // #endregion Local Imports
 // eslint-disable-next-line import/no-webpack-loader-syntax
 // const theme2 = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!./../../src/globalStyles/index.scss');
