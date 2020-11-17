@@ -20,7 +20,7 @@ import { withTranslation } from "@Server/i18n";
 // import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 // import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
-import { Input } from "@Components";
+import { DropDown } from "@Components";
 // import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
@@ -49,11 +49,39 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
         <div>
             <h1>Home Page</h1>
             <div className=" w-1/2 pl-3 ml-40">
-                <Input
+                {/* <Input
                     warningText="لطفا نام خود را کامل وارد کنید"
                     id="hey"
                     label="نام"
                     placeholder="نام خود را وارد کنید"
+                /> */}
+
+                <DropDown
+                    id="someid"
+                    label="نام"
+                    onSelect={(id, item) => console.log(id)}
+                    options={[
+                        {
+                            id: "1",
+                            label: "گزینه اول",
+                            selected: true,
+                            // avatar: {
+                            //     alt: "hamid",
+                            //     src:
+                            //         "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80",
+                            // },
+                        },
+                        {
+                            id: "2",
+                            label: "گزینه دوم",
+                            selected: true,
+                            // avatar: {
+                            //     alt: "hamid",
+                            //     src:
+                            //         "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80",
+                            // },
+                        },
+                    ]}
                 />
             </div>
         </div>

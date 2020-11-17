@@ -1,0 +1,57 @@
+
+.dropDown {
+
+}
+
+
+.label {
+    @apply block pb-1 text-sm leading-5 font-medium text-sub-text-color;
+}
+
+.placeHolder {
+    @apply text-border-color;
+    vertical-align: middle;
+    vertical-align: -webkit-baseline-middle;
+    
+}
+
+.options {
+    @apply  rounded-md py-0 text-base leading-6 shadow-xs overflow-auto ;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.options:focus {
+    @apply outline-none;
+}
+
+
+.dropDownButton {
+    @apply cursor-default inline-block relative w-full rounded-md border border-gray-300 bg-white pr-4  py-3 text-right  transition ease-in-out duration-150;
+}
+
+.dropDownButton:focus {
+    @apply outline-none border-blue-300 ;
+}
+
+
+.borderRadiusNone {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.OptionItem {
+    @apply text-gray-900  cursor-default select-none relative py-2 pr-3 ;
+    transition: all 0.4s ease-in-out;
+}
+
+.OptionItem:hover {
+    background-color: #EAECF8;
+    transition: all 0.4s ease-in-out;
+    
+}
+
+.scroll {
+    max-height: 160px;
+    overflow: scroll;
+}

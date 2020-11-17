@@ -9,6 +9,9 @@ module.exports = {
       md: "10px",
     },
     extend: {
+      fontSize: {
+        xxs: "14px",
+      },
       colors: {
         "main-color": "#2CB4E8",
         "sub-text-color": "#5F6571",

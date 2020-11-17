@@ -7,3 +7,4 @@ export { Hamid } from "@Components/Hamid";
 export { Spinner } from "@Components/Spinner";
 export { VisuallyHidden } from "@Components/VisuallyHidden";
 export { Input } from "@Components/Input";
+export { DropDown } from "@Components/DropDown";
