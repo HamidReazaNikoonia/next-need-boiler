@@ -20,7 +20,7 @@ import { withTranslation } from "@Server/i18n";
 // import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 // import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
-import { DropDown } from "@Components";
+import { ToggleSwitch } from "@Components";
 // import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
@@ -45,6 +45,10 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     //         />
     //     ));
 
+    const onToggleChange = event => {
+        console.log(event.target.checked);
+    };
+
     return (
         <div>
             <h1>Home Page</h1>
@@ -56,6 +60,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     placeholder="نام خود را وارد کنید"
                 /> */}
 
+                {/*
                 <DropDown
                     id="someid"
                     label="نام"
@@ -82,6 +87,15 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                             // },
                         },
                     ]}
+                />
+                */}
+
+                <ToggleSwitch
+                    id="id"
+                    defaultChecked={false}
+                    disabled={false}
+                    text={["Yes", "No"]}
+                    onToggleChange={onToggleChange}
                 />
             </div>
         </div>
