@@ -9,6 +9,7 @@ import { cx } from "../../../utilis";
 
 // #region Local Imports
 import { IButton } from "./Button";
+import style from "./styles.module.scss";
 // #endregion Local Imports
 
 // const Container = styled.div<IButton.IProps>`
@@ -58,6 +59,12 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
             ...styles,
         };
 
+        const combinedClassNames = cx(
+            style.btn,
+            style[`btn-${variant}`],
+            className
+        );
+
         const Component: any = as || "button";
 
         return (
@@ -66,7 +73,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
                 ref={ref}
                 type={as ? undefined : type}
                 style={buttonStyles}
-                className={className}
+                className={combinedClassNames}
                 {...props}
             >
                 {leftIcon && !isLoading && (

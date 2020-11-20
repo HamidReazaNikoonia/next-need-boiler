@@ -1,7 +1,11 @@
 const withPlugins = require("next-compose-plugins");
+const withReactSvg = require("next-react-svg");
 const withBundleAnalyzer = require("@next/bundle-analyzer");
 
+const path = require("path");
+
 const nextConfig = {
+  include: path.resolve(__dirname, "public/static/svg"),
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -23,4 +27,7 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([[withBundleAnalyzer]], nextConfig);
+module.exports = withPlugins(
+  [[withBundleAnalyzer], [withReactSvg]],
+  nextConfig
+);

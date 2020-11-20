@@ -1,0 +1,8 @@
+.btn {
+    @apply px-24 py-3 text-center ;
+    border-radius: 24px;
+}
+
+.btn-primary {
+    @apply bg-green text-white;
+}

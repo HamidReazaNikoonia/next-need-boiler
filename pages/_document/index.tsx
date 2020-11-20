@@ -47,7 +47,7 @@ class WebAppDocument extends Document {
                         type="text/css"
                     />
                 </Head>
-                <body>
+                <body className="overflow-hidden overflow-y-scroll">
                     <Main />
                     <NextScript />
                 </body>

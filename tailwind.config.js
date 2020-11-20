@@ -18,6 +18,7 @@ module.exports = {
         "border-color": "#DBDEF0",
         "border-color-ligth": "#EAECF8",
         "red-warning": "#E82C7C",
+        green: "#0BCE83",
       },
     },
   },
