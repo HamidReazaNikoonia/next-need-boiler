@@ -6,11 +6,11 @@ import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 // #endregion Global Imports
 
 // #region Local Imports
-import {theme} from "@Definitions/Styled"
+
 import {withRedux, withI18next} from "./Decorators"
 // #endregion Local Imports
 
-addDecorator(withThemesProvider([{name: "light", ...theme}]));
+
 addDecorator(withKnobs);
 addDecorator(withRedux());
 addDecorator(withI18next());

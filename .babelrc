@@ -17,6 +17,7 @@
           "@Server": "./server",
           "@Static": "./public/static",
           "@Styled": "./src/Styled",
+          "@Layouts": "./src/Layouts",
           "@Utils": "./src/utilis"
         }
       }

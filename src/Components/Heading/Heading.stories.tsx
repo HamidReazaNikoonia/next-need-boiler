@@ -3,7 +3,6 @@ import React from "react";
 // #endregion Global Imports
 
 // #region Local Imports
-import { Container } from "@Styled/Home";
 import { Heading } from "./index";
 
 // #endregion Local Imports
@@ -14,7 +13,7 @@ export default {
 };
 
 export const Default = () => (
-    <Container>
+    <div>
         <Heading text="Hello World" />
-    </Container>
+    </div>
 );
