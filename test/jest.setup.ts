@@ -3,8 +3,11 @@ import dotenv from "dotenv";
 import nock from "nock";
 import "jest-styled-components";
 import "@testing-library/jest-dom";
+import { configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 // #endregion Global Imports
 
+configure({ adapter: new Adapter() });
 dotenv.config({ path: ".env.test" });
 
 nock("http://localhost:3000")

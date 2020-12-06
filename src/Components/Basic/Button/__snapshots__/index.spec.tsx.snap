@@ -1,16 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Basic Components Button should match snapshot 1`] = `
-.c0 {
-  cursor: pointer;
-  color: #2c3e50;
-}
-
 <div>
-  <div
-    class="c0"
+  <button
+    class=""
+    style="display: inline-flex; appearance: none; align-items: center; justify-content: center; transition: all 250ms; user-select: none; position: relative; white-space: nowrap; vertical-align: middle; outline: none; width: auto;"
   >
     Test
-  </div>
+  </button>
 </div>
 `;

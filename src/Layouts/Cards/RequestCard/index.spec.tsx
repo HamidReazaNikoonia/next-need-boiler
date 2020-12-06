@@ -4,12 +4,12 @@ import { mount } from "enzyme";
 // #endregion Global Imports
 
 // #region Local Imports
-import { Hamid } from "@Components";
+import { RequestCard } from "./index";
 // #endregion Local Imports
 
-describe("Hamid", () => {
+describe("RequestCard", () => {
     it("should match snapshot", () => {
-        const wrapper = mount(<Hamid />);
+        const wrapper = mount(<RequestCard />);
         expect(wrapper).toMatchSnapshot();
     });
 });

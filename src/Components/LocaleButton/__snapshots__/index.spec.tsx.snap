@@ -3,20 +3,16 @@
 exports[`Components LocaleButton with isActive=false should match snapshot 1`] = `<div />`;
 
 exports[`Components LocaleButton with isActive=true should match snapshot 1`] = `
-.c1 {
-  cursor: pointer;
-  color: #2c3e50;
-}
-
 .c0 {
   color: #2c3e50;
 }
 
 <div>
-  <div
-    class="c0 c1"
+  <button
+    class="c0"
+    style="display: inline-flex; appearance: none; align-items: center; justify-content: center; transition: all 250ms; user-select: none; position: relative; white-space: nowrap; vertical-align: middle; outline: none; width: auto;"
   >
     tr
-  </div>
+  </button>
 </div>
 `;

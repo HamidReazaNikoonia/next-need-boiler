@@ -23,11 +23,19 @@ module.exports = {
     });
 
     config.module.rules.push({
-      test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader"],
-      include: path.resolve(__dirname, "../"),
-      exclude: /\.module\.scss$/,
+      test:/\.module\.scss$/,
+      use: ["style-loader", "css-loader", "sass-loader","postcss-loader",],
+      // include: path.resolve(__dirname, "../"),
+      // exclude: /\.module\.scss$/,
     });
+
+    // config.module.rules.push({
+    //   test: /\.css$/,
+    //   loaders: ['style-loader', 'css-loader', 'postcss-loader'],
+    //   include: path.resolve(__dirname, '../'),
+    // });
+
+    // config.module.rules.filter((rule) => rule.test.toString() !== '/\.module\.scss$/'),
 
     config.resolve.extensions.push(".ts", ".tsx");
 
@@ -37,19 +45,46 @@ module.exports = {
       enforce: "pre",
     });
 
-    config.module.rules.push({
-      test: /\.module\.scss$/,
-      use: [
-        "style-loader",
-        {
-          loader: "css-loader",
-          options: {
-            modules: true,
-          },
-        },
-        "sass-loader",
-      ],
-    });
+    // config.module.rules.push({
+    //   test: /\.module\.css$/,
+    //   exclude: /\.module\.css$/,
+    //   use: ['style-loader', 'css-loader'],
+    //   include: path.resolve(__dirname, '../'),
+    // });
+
+    // config.module.rules.push({
+    //   include: path.resolve(__dirname, '../'),
+    //   exclude: /\.module\.scss$/,
+    //   test: /\.module\.scss$/,
+    //   use: [
+        
+    //     // "style-loader",
+    //     "sass-loader",
+    //     "css-loader",
+    //     "postcss-loader",
+        
+        
+    //     // {
+    //     //   loader: "css-loader",
+    //     //   options: {
+    //     //     modules: true,
+    //     //   },
+    //     // },
+    //     // {
+    //     //   loader: "sass-loader",
+    //     //   options: {
+    //     //     modules: true,
+    //     //   },
+    //     // },
+    //   ],
+    // });
+
+    // config.module.rules.push({
+    //   test: /\.module\.scss$/,
+    //   exclude: /\.module\.css$/,
+    //   use: ['style-loader', 'css-loader', "sass-loader"],
+    //   include: path.resolve(__dirname, '../'),
+    // });
 
     return config;
   },
