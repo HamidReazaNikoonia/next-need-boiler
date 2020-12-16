@@ -1,8 +1,14 @@
 .btn {
-    @apply px-24 py-3 text-center ;
+    @apply px-6 py-1 text-center ;
     border-radius: 24px;
+    transition: all 0.9 ease;
+}
+
+.btn:hover {
+    opacity: 0.7;
+    transition: all 0.9 ease;
 }
 
 .btn-primary {
-    @apply bg-green text-white;
+    @apply bg-main-color text-white;
 }

@@ -20,12 +20,14 @@ import { withTranslation } from "@Server/i18n";
 // import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 // import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
-import { ToggleSwitch } from "@Components";
+import { ToggleSwitch, Card } from "@Components";
+import CardBody from "@Components/Card/CardBody";
+import { IHomePage, ReduxNextPageContext } from "@Interfaces";
+import ProductCard from "../../src/Layouts/Cards/ProductCard";
 // import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
 // #region Interface Imports
-import { IHomePage, ReduxNextPageContext } from "@Interfaces";
 // #endregion Interface Imports
 
 const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
@@ -90,13 +92,14 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                 />
                 */}
 
-                <ToggleSwitch
+                {/* <ToggleSwitch
                     id="id"
                     defaultChecked={false}
                     disabled={false}
                     text={["Yes", "No"]}
                     onToggleChange={onToggleChange}
-                />
+                /> */}
+                <ProductCard />
             </div>
         </div>
     );

@@ -36,7 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
             rightIcon,
             iconSpacing,
             spinner,
-            variant,
+            variant = "primary",
             styles,
             children,
             ...props

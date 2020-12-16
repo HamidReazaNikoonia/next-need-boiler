@@ -19,6 +19,10 @@
     "build-storybook": "build-storybook -s ./public/static  -c .storybook -o .storybookout"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "@next/bundle-analyzer": "^9.4.4",
     "autoprefixer": "^9.6.1",
     "bootstrap": "^4.5.2",
