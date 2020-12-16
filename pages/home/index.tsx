@@ -23,7 +23,7 @@ import { HomeActions } from "@Actions";
 import { ToggleSwitch, Card } from "@Components";
 import CardBody from "@Components/Card/CardBody";
 import { IHomePage, ReduxNextPageContext } from "@Interfaces";
-import ProductCard from "../../src/Layouts/Cards/ProductCard";
+import ProviderCard from "../../src/Layouts/Cards/ProviderCard";
 // import { Button } from "@Components/Basic/Button";
 // #endregion Local Imports
 
@@ -99,7 +99,8 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     text={["Yes", "No"]}
                     onToggleChange={onToggleChange}
                 /> */}
-                <ProductCard />
+                {/* <ProductCard /> */}
+                <ProviderCard />
             </div>
         </div>
     );
