@@ -1,6 +1,6 @@
 // #region Global Imports
 import React from "react";
-import { cx } from "@Utils";
+import { cx } from "@Utils/index";
 // #endregion Global Imports
 
 // #region Local Imports

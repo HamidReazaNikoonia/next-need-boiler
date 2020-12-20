@@ -35,6 +35,8 @@
       "@Test/*": ["test/*"],
       "@Utils/*": ["src/utilis/*"],
       "@Layouts/*": ["src/Layouts/*"],
+      "@Context/*": ["src/context/*"],
+      "@Hooks/*": ["src/hooks/*"],
     }
   },
   "exclude": [

@@ -1,0 +1,15 @@
+
+.badge {
+    @apply bg-green flex justify-center items-center;
+    width: 20px;
+    height: 20px;
+
+  &.badge-primary {
+    @apply bg-green;
+  }
+
+  .icon {
+      @apply text-white ;
+      font-size: 11px;
+  }
+}

@@ -18,7 +18,9 @@
           "@Static": "./public/static",
           "@Styled": "./src/Styled",
           "@Layouts": "./src/Layouts",
-          "@Utils": "./src/utilis"
+          "@Utils": "./src/utilis",
+          "@Context": "./src/context",
+          "@Hooks": "./src/hooks"
         }
       }
     ],

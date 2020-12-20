@@ -20,7 +20,7 @@ import { withTranslation } from "@Server/i18n";
 // import { IStore } from "@Redux/IStore";
 import { HomeActions } from "@Actions";
 // import { Heading, LocaleButton, Hamid, Spinner } from "@Components";
-import { ToggleSwitch, Card } from "@Components";
+import { ToggleSwitch, Card, Avatar } from "@Components";
 import CardBody from "@Components/Card/CardBody";
 import { IHomePage, ReduxNextPageContext } from "@Interfaces";
 import ProviderCard from "../../src/Layouts/Cards/ProviderCard";
@@ -100,7 +100,12 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     onToggleChange={onToggleChange}
                 /> */}
                 {/* <ProductCard /> */}
-                <ProviderCard />
+                {/* <ProviderCard /> */}
+                <Avatar
+                    size="regular"
+                    badge
+                    src="https://i.pinimg.com/736x/53/ff/05/53ff0591adc2b77ac000aca68791365a.jpg"
+                />
             </div>
         </div>
     );

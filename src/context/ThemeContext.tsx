@@ -5,6 +5,15 @@ interface ThemeContextInterface {
     theme: any;
     mode?: any;
     toggleMode?: any;
+    avatar?: {
+        base: string;
+        size: {
+            large: string;
+            regular: string;
+            small: string;
+        };
+    };
+    card?: any;
 }
 
 export const ThemeContext = React.createContext<ThemeContextInterface>({
