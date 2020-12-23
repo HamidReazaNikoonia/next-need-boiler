@@ -65,7 +65,7 @@ export const Avatar: React.FunctionComponent<IAvatar.IProps> = (
                     className="absolute  rounded-md shadow-inner"
                     aria-hidden="true"
                 >
-                    <Badge />
+                    <Badge avatarBadge />
                 </div>
             )}
         </div>

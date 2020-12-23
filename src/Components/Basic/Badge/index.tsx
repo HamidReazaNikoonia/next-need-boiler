@@ -26,17 +26,35 @@ interface IBadge {
      * @type {('sm'|'md'|'lg')}
      */
     rounded?: string;
+    /**
+     * This Badge have fixed width and heigth for
+     * avatar
+     */
+    avatarBadge?: boolean;
+    /**
+     * Custom classNames will be overwrite to Badge
+     *
+     */
+    classNames?: Object;
 }
 
-export const Badge: React.FC<IBadge> = ({
+const Badge: React.FC<IBadge> = ({
     variant = "primary",
     rounded = 6,
+    children,
+    avatarBadge,
+    classNames,
 }) => {
-    const classNames = cx(styles.badge, styles[`badge-${variant}`]);
+    const customClassNames = cx(
+        classNames,
+        styles.badge,
+        styles[`badge-${variant}`],
+        avatarBadge && styles["image-badge"]
+    );
 
     const radiusType: any = {
         sm: 6,
-        md: 10,
+        md: 12,
         lg: "100%",
     };
 
@@ -46,9 +64,15 @@ export const Badge: React.FC<IBadge> = ({
         }px`,
     };
 
+    const child = React.Children.count(children);
+
     return (
-        <div style={customStyles} className={classNames}>
-            <FontAwesomeIcon className={styles.icon} icon={faCheck} />
+        <div style={customStyles} className={customClassNames}>
+            {child > 0 ? (
+                children
+            ) : (
+                <FontAwesomeIcon className={styles.icon} icon={faCheck} />
+            )}
         </div>
     );
 };

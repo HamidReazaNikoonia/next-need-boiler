@@ -54,7 +54,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
     return (
         <div>
             <h1>Home Page</h1>
-            <div className=" w-1/2 pl-3 ml-40">
+            <div className=" w-1/1 px-24">
                 {/* <Input
                     warningText="لطفا نام خود را کامل وارد کنید"
                     id="hey"
@@ -100,12 +100,7 @@ const Home: NextPage<IHomePage.IProps, IHomePage.InitialProps> = ({
                     onToggleChange={onToggleChange}
                 /> */}
                 {/* <ProductCard /> */}
-                {/* <ProviderCard /> */}
-                <Avatar
-                    size="regular"
-                    badge
-                    src="https://i.pinimg.com/736x/53/ff/05/53ff0591adc2b77ac000aca68791365a.jpg"
-                />
+                <ProviderCard />
             </div>
         </div>
     );

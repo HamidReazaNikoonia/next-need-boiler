@@ -12,3 +12,8 @@
 .btn-primary {
     @apply bg-main-color text-white;
 }
+
+.btn-bg-none {
+    @apply border border-main-color;
+    background-color: none;
+}

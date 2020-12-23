@@ -47,13 +47,13 @@ declare namespace IButton {
          * Select Html Tag
          */
         as?: React.ReactElement;
-        className: any;
-        variant?: "danger" | "primary";
+        className?: any;
+        variant?: "danger" | "primary" | "bg-none";
         /**
          * Custom Styles will be merged
          */
-        styles: any;
-        children: any;
+        styles?: any;
+        children?: any;
     }
 }
 export { IButton };

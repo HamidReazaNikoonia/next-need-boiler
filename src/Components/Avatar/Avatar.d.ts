@@ -32,13 +32,13 @@ export declare module IAvatar {
          */
         srcSet?: string;
         /* Styles applied to the root element if not `src` or `srcSet`. */
-        colorDefault: string;
+        colorDefault?: string;
         /**
          * Defines loading strategy
          */
         loading?: "eager" | "lazy";
         square?: boolean;
-        circular: boolean;
+        circular?: boolean;
         /**
          * The border color of the avatar
          */
