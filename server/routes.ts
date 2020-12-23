@@ -6,5 +6,6 @@ const routes = (module.exports = nextRoutes());
 
 routes.add("home", "/");
 routes.add("/authentication", "/authentication/index");
+routes.add("/dashboard/request-order", "/requestOrder/index");
 
 export default routes;

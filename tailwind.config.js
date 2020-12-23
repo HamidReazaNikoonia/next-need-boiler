@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         "main-color": "#2CB4E8",
+        "ligth-blue": "#EDEFFC",
         "sub-text-color": "#5F6571",
         "border-color": "#DBDEF0",
         "border-color-ligth": "#EAECF8",
