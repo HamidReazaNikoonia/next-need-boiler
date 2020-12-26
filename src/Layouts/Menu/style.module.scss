@@ -1,0 +1,10 @@
+.faIcons {
+    font-size: 1.2rem;
+    transition: opacity 0.4s ease;
+    cursor: pointer;
+}
+
+.faIcons:hover {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}

@@ -9,8 +9,9 @@ import React, { useState } from "react";
 
 // #region Local Imports
 // Util
-import { cx } from "@Utils";
-import { optionsKnob } from "@storybook/addon-knobs";
+import { cx } from "@Utils/index";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles.module.scss";
 // #endregion Local Imports
 
@@ -33,30 +34,21 @@ const SelectedItemComp = ({ data }) => (
             <img
                 src={data.avatar ? data.avatar.src : ""}
                 alt={data.avatar ? data.avatar.alt : ""}
-                className="flex-shrink-0 h-6 w-6 rounded-full ml-3"
+                className="flex-shrink-0 h-8 w-8 rounded-full ml-3"
             />
         )}
-        <span className="font-normal text-sub-text-color w-full text-xxs block truncate">
+        <span
+            style={{ marginTop: "3px" }}
+            className="font-normal text-sub-text-color w-full text-xxs block truncate"
+        >
             {data.label}
         </span>
     </div>
 );
 
 const DropDownArrowIcon: React.FC = () => (
-    <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg
-            className="h-5 w-5 text-gray-400"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-        >
-            <path
-                d="M7 7l3-3 3 3m0 6l-3 3-3-3"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
+    <span className="absolute inset-y-0 left-0 flex items-center text-semi-black pl-5 pointer-events-none">
+        <FontAwesomeIcon icon={faAngleDown} />
     </span>
 );
 
@@ -140,6 +132,8 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
         hasScroll = true,
         selectedItemProps = null,
         onSelect,
+        borderRadius = "sm",
+        bgColor,
     } = props;
 
     // Keep track of whether the dropdown is open or not.
@@ -152,7 +146,7 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
         onSelect(id, item);
     };
     return (
-        <div>
+        <div className="w-full">
             <DropDownLabel id={id}>{label}</DropDownLabel>
 
             <div className="relative">
@@ -160,7 +154,11 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
                 <span
                     role="button"
                     onClick={() => setActive(!isActive)}
-                    className="inline-block w-full rounded-md shadow-sm"
+                    className={cx(
+                        "inline-block w-full overflow-hidden border  shadow-sm",
+                        borderRadius &&
+                            styles[`dropdown-radius-${borderRadius}`]
+                    )}
                 >
                     <button
                         type="button"
@@ -169,6 +167,7 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
                         aria-labelledby="listbox-label"
                         className={cx(
                             styles.dropDownButton,
+                            bgColor && styles[`bg-${bgColor}`],
                             "sm:text-sm sm:leading-5 leading-2 focus:shadow-outline-blue",
                             isActive && styles.borderRadiusNone
                         )}
@@ -196,4 +195,39 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
             </div>
         </div>
     );
+};
+
+DropDown.defaultProps = {
+    options: [
+        {
+            id: 1,
+            label: "09121534434",
+            avatar: {
+                src:
+                    "https://i.pinimg.com/736x/53/ff/05/53ff0591adc2b77ac000aca68791365a.jpg",
+                alt: "some thisng",
+            },
+            selected: true,
+        },
+        {
+            id: 2,
+            label: "two",
+            avatar: {
+                src:
+                    "https://i.pinimg.com/736x/53/ff/05/53ff0591adc2b77ac000aca68791365a.jpg",
+                alt: "some thisng",
+            },
+            selected: true,
+        },
+        {
+            id: 3,
+            label: "یک نوشته",
+            avatar: {
+                src:
+                    "https://i.pinimg.com/736x/53/ff/05/53ff0591adc2b77ac000aca68791365a.jpg",
+                alt: "some thisng",
+            },
+            selected: true,
+        },
+    ],
 };

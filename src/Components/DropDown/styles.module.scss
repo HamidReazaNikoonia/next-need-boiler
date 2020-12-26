@@ -27,11 +27,21 @@
 
 
 .dropDownButton {
-    @apply cursor-default inline-block relative w-full rounded-md border border-gray-300 bg-white pr-4  py-3 text-right  transition ease-in-out duration-150;
+    @apply cursor-default inline-block relative w-full  bg-white pr-4  py-3 text-right  transition ease-in-out duration-150;
+    &.bg-ligth-blue {
+        @apply bg-ligth-blue
+    }
+}
+
+.dropdown-radius-sm {
+    @apply rounded-md;
+}
+.dropdown-radius-md {
+    border-radius: 100px;
 }
 
 .dropDownButton:focus {
-    @apply outline-none border-blue-300 ;
+    @apply outline-none border-blue-300;
 }
 
 

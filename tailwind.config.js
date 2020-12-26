@@ -8,6 +8,7 @@ module.exports = {
     borderRadius: {
       md: "10px",
       lg: "30px",
+      full: "100%",
     },
     extend: {
       fontSize: {
@@ -20,6 +21,7 @@ module.exports = {
         "border-color": "#DBDEF0",
         "border-color-ligth": "#EAECF8",
         "red-warning": "#E82C7C",
+        "semi-black": "#200E32",
         green: "#0BCE83",
       },
     },

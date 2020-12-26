@@ -62,7 +62,7 @@ export declare module IDropDown {
          *
          * @controllable show
          */
-        onToggle: Function;
+        onToggle?: Function;
 
         /**
          * A callback fired when a menu item is selected.
@@ -71,14 +71,15 @@ export declare module IDropDown {
          * (eventKey: any, event: Object) => any
          * ```
          */
-        onSelect: () => void;
+        onSelect: Function;
         /**
          * Selected Item , get from props, default is null
+         * (item: object)
          *
          * @type {DropdownItem}
          * @memberof IProps
          */
-        selectedItemProps: DropdownItem | null;
+        selectedItemProps?: DropdownItem | null;
         /**
          * when set to `true` , container of Dropdown list will appear with
          * scroll , default max-heigth is 160px
@@ -98,6 +99,22 @@ export declare module IDropDown {
          */
         focusFirstItemOnShow: false | true | "keyboard";
 
+        /**
+         *
+         *
+         * @type {string}
+         * @memberof IProps
+         *  { sm: 10px, md: 100px }
+         *  default is sm
+         */
+        borderRadius?: string;
+        /**
+         * Custom Background color of dropDown
+         *
+         * @type {string}
+         * @memberof IProps
+         */
+        bgColor?: string;
         className?: string;
         placeHolder?: string;
         label?: string;

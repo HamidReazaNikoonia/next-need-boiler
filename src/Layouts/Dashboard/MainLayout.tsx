@@ -1,17 +1,17 @@
 // #region Global Imports
 import React from "react";
-import { NextPage } from "next";
 // #endregion Global Imports
 
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
-import styles from "./style.module.scss";
+import SideBarMenu from "@Layouts/Menu/SideBarMenu";
+import styles from "./styles.module.scss";
 // #endregion Local Imports
 
 // #region Interface Imports
 // #endregion Interface Imports
 
-export const DashboardMainLayout: NextPage = ({ t, i18n, children }) => {
+export const DashboardMainLayout: React.FC = ({ t, i18n, children }) => {
     return (
         <section
             id="dashboard-main-layout-container "
@@ -26,7 +26,7 @@ export const DashboardMainLayout: NextPage = ({ t, i18n, children }) => {
                 className="side-menu w-1/6 bg-white h-screen"
                 style={{ maxWidth: "300px" }}
             >
-                Menu
+                <SideBarMenu />
             </div>
         </section>
     );
