@@ -8,3 +8,27 @@
     opacity: 0.4;
     transition: opacity 0.3s ease;
 }
+
+li.active {
+    @apply text-main-color;
+}
+
+li.active::before {
+    @apply bg-main-color;
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 5px;
+    height: 44px;
+    border-radius: 50% 0 0 50% ;
+}
+
+.menuList li {
+    @apply flex items-center pb-8 pr-5;
+    min-height: 44px;
+
+}
+
+.menuList li > a {
+    @apply pr-4 text-base font-bold;
+}

@@ -4,6 +4,8 @@ import React from "react";
 
 import LOGO from "@Static/svg/logo.svg";
 
+import { cx } from "@Utils/index";
+
 // #region Local Imports
 import { withTranslation } from "@Server/i18n";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,9 +19,9 @@ import styles from "./style.module.scss";
 
 const SideBarMenu: React.FC = ({ t, i18n }) => {
     return (
-        <div dir="rtl" className="flex flex-col pt-6 pr-5 w-full">
+        <div dir="rtl" className="flex flex-col pt-6  w-full">
             {/* logo */}
-            <div className="flex justify-between">
+            <div className="flex justify-between pr-5">
                 <div className="logo ">
                     <LOGO />
                 </div>
@@ -38,13 +40,66 @@ const SideBarMenu: React.FC = ({ t, i18n }) => {
             </div>
 
             {/* user avatar and dropDown */}
-            <div className="flex w-full pt-8">
+            <div className="flex w-full pt-8 pr-5">
                 <DropDown
                     id="someid"
                     onSelect={(id, item) => console.log(id)}
                     borderRadius="md"
                     bgColor="ligth-blue"
                 />
+            </div>
+
+            {/* Menu List */}
+            <div className="flex flex-col justify-center w-full pt-8">
+                <ul className={styles.menuList}>
+                    <li className={cx("relative", styles.active)}>
+                        <FontAwesomeIcon
+                            className={styles.faIcons}
+                            icon={faCog}
+                        />
+                        <a href="#">درخواست ها</a>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon
+                            className={styles.faIcons}
+                            icon={faCog}
+                        />
+                        <a href="">پیشنهاد ها</a>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon
+                            className={styles.faIcons}
+                            icon={faCog}
+                        />
+                        <a href="">کسب و کار</a>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon
+                            className={styles.faIcons}
+                            icon={faCog}
+                        />
+                        <a href="#">مدیریت موضوعات</a>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon
+                            className={styles.faIcons}
+                            icon={faCog}
+                        />
+                        <a href="">مدیریت کاربران</a>
+                    </li>
+
+                    <li>
+                        <FontAwesomeIcon
+                            className={styles.faIcons}
+                            icon={faCog}
+                        />
+                        <a href="">گزارشات</a>
+                    </li>
+                </ul>
             </div>
         </div>
     );
