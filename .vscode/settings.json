@@ -5,6 +5,8 @@
     ],
         "editor.codeActionsOnSave": {
             "source.fixAll.eslint": true
-        }
+        },
+        "css.validate": false,
+        "scss.validate": false
       
 }
