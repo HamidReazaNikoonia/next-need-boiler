@@ -17,3 +17,7 @@
     @apply border border-main-color;
     background-color: none;
 }
+
+.btn:disabled {
+    cursor: not-allowed
+}
