@@ -1,6 +1,9 @@
 
-.dropDown {
-
+.dropDownContainer {
+    @apply bg-white flex;
+    &.bg-ligth-blue {
+        @apply bg-ligth-blue
+    }
 }
 
 
@@ -27,10 +30,7 @@
 
 
 .dropDownButton {
-    @apply cursor-default inline-block relative w-full  bg-white pr-4  py-3 text-right  transition ease-in-out duration-150;
-    &.bg-ligth-blue {
-        @apply bg-ligth-blue
-    }
+    @apply cursor-default inline-block relative w-full pr-4  py-2 text-right  transition ease-in-out duration-150;
 }
 
 .dropdown-radius-sm {

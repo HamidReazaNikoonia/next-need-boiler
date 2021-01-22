@@ -64,7 +64,7 @@ const DropDownOptionItem: React.FC<IDropDown.DropdownItem> = ({
         role="option"
         className={styles.OptionItem}
     >
-        <div className="flex items-center">
+        <div className="flex items-center cursor-pointer">
             {data.avatar && (
                 <img
                     src={data.avatar ? data.avatar.src : ""}
@@ -103,7 +103,7 @@ const DropDownOptions: React.FC<IDropDown.DropdownItem[]> = ({
 }) => (
     <div
         className={cx(
-            "absolute w-full  bg-white shadow-sm",
+            "absolute w-full  bg-white shadow-sm z-50",
             hasScroll && styles.scroll
         )}
     >
@@ -149,15 +149,18 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
         <div className="w-full">
             <DropDownLabel id={id}>{label}</DropDownLabel>
 
-            <div className="relative">
+            <div className="relative cursor-pointer">
                 {/*  Toggle the dropdown if the button is clicked */}
                 <span
                     role="button"
+                    style={{ minHeight: "52px" }}
                     onClick={() => setActive(!isActive)}
                     className={cx(
                         "inline-block w-full overflow-hidden border  shadow-sm",
+                        styles.dropDownContainer,
                         borderRadius &&
-                            styles[`dropdown-radius-${borderRadius}`]
+                            styles[`dropdown-radius-${borderRadius}`],
+                        bgColor && styles[`bg-${bgColor}`]
                     )}
                 >
                     <button
@@ -167,7 +170,6 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
                         aria-labelledby="listbox-label"
                         className={cx(
                             styles.dropDownButton,
-                            bgColor && styles[`bg-${bgColor}`],
                             "sm:text-sm sm:leading-5 leading-2 focus:shadow-outline-blue",
                             isActive && styles.borderRadiusNone
                         )}
