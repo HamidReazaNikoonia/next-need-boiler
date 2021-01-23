@@ -2,3 +2,18 @@
 .authentication {
  min-width: 360px;
 }
+
+.authCard {
+    min-width: 519px;
+    @media screen and (max-width: 600px) {
+        min-width: 450px;
+    }
+}
+
+.svg {
+    left: 10%;
+    @media screen and (max-width:1300px) {
+        left:3%;
+        transform: scale(0.8);
+    }
+}

@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       fontSize: {
         xxs: "14px",
+        xxl: "24px",
       },
       colors: {
         "main-color": "#2CB4E8",

@@ -74,6 +74,7 @@ export declare module IInput {
          */
         max?: number;
         className?: string;
+        inputClassName?: string;
         /**
          * A convenience prop for add the `text-muted` class,
          * since it's so commonly used here.

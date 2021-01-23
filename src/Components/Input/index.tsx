@@ -6,7 +6,7 @@ import React from "react";
 // #endregion Global Imports
 
 // #region Local Imports
-import { cx } from "@Utils";
+import { cx } from "@Utils/index";
 import styles from "./style.module.scss";
 // #endregion Local Imports
 
@@ -20,6 +20,7 @@ export const Input = React.forwardRef<HTMLInputElement, IInput.IProps>(
             size = "xs",
             type = "text",
             variant = "primary",
+            inputClassName,
             className,
             inputDirection = "rtl",
             isFullWidth = true,
@@ -35,7 +36,7 @@ export const Input = React.forwardRef<HTMLInputElement, IInput.IProps>(
         const ISize = `input-${size}`;
         const IVariant = `input-${variant}`;
         const clx = cx(
-            className,
+            inputClassName,
             isFullWidth && "w-full",
             isDisabled && styles["input-disable"],
             warning && styles["input-warning"],
@@ -45,7 +46,7 @@ export const Input = React.forwardRef<HTMLInputElement, IInput.IProps>(
             styles[IVariant]
         );
         return (
-            <div dir="rtl" className={styles.inputContainer}>
+            <div dir="rtl" className={cx(styles.inputContainer, className)}>
                 <label
                     className="block text-sm text-sub-text-color mb-1"
                     htmlFor={id}
