@@ -10,3 +10,4 @@ export { DropDown } from "@Components/DropDown";
 export { ToggleSwitch } from "@Components/ToggleSwitch";
 export { Card } from "@Components/Card";
 export { Avatar } from "@Components/Avatar";
+export { CheckBox } from "@Components/CheckBox";

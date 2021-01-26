@@ -1,0 +1,9 @@
+
+.checkBox {
+   border: 3px solid red;
+   transform: scale(1.4)
+}
+
+.label {
+    @apply text-xxs font-light;
+}

@@ -10,7 +10,7 @@ import { withTranslation } from "@Server/i18n";
 // import { AuthenticationActions } from "@Actions";
 import { ReduxNextPageContext, IAuthentication } from "@Interfaces";
 import { cx } from "@Utils/index";
-import { Input } from "@Components";
+import { Input, CheckBox } from "@Components";
 import { Button } from "@Components/Basic/Button";
 import styles from "./style.module.scss";
 import SVG from "../../public/static/svg/auth_svg.svg";
@@ -88,7 +88,11 @@ export const Authentication: NextPage<
                             />
                         </div>
 
-                        <div className="flex justify-end mt-6">
+                        <div className="flex justify-between mt-6">
+                            <CheckBox
+                                id="condition"
+                                label="شرایط و قوانین را میپذیرم"
+                            />
                             <Button className="" variant="primary">
                                 ادامه
                             </Button>
