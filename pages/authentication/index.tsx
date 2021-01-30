@@ -12,12 +12,12 @@ import { ReduxNextPageContext, IAuthentication } from "@Interfaces";
 import { cx } from "@Utils/index";
 import { Input, CheckBox } from "@Components";
 import { Button } from "@Components/Basic/Button";
+import GoogleIcon from "@Static/svg/icons-google.svg";
+import FBIcon from "@Static/svg/icons-facebook.svg";
+import SVG from "@Static/svg/auth_svg.svg";
+import LOGO from "@Static/svg/logo.svg";
 import styles from "./style.module.scss";
-import SVG from "../../public/static/svg/auth_svg.svg";
-import LOGO from "../../public/static/svg/logo.svg";
 
-import GoogleIcon from "../../public/static/svg/icons-google.svg";
-import FBIcon from "../../public/static/svg/icons-facebook.svg";
 // #endregion Local Imports
 
 // #region Interface Imports
@@ -107,7 +107,7 @@ export const Authentication: NextPage<
 
                         <div className="relative mt-16 h-px bg-gray-300">
                             <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
-                                <span className="bg-white px-4 text-xs text-gray-500 uppercase">
+                                <span className="bg-white font-semibold px-4 text-xs  uppercase">
                                     ورود یا ثبت نام با
                                 </span>
                             </div>
