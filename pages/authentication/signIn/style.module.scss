@@ -1,0 +1,8 @@
+
+.svg {
+    left: 10%;
+    @media screen and (max-width:1300px) {
+        left:3%;
+        transform: scale(0.8);
+    }
+}

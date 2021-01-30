@@ -14,7 +14,7 @@ import { Input, CheckBox } from "@Components";
 import { Button } from "@Components/Basic/Button";
 import GoogleIcon from "@Static/svg/icons-google.svg";
 import FBIcon from "@Static/svg/icons-facebook.svg";
-import SVG from "@Static/svg/auth_svg.svg";
+import SVG from "@Static/svg/auth-signin.svg";
 import LOGO from "@Static/svg/logo.svg";
 import styles from "./style.module.scss";
 
@@ -23,7 +23,7 @@ import styles from "./style.module.scss";
 // #region Interface Imports
 // #endregion Interface Imports
 
-export const Authentication: NextPage<
+export const AuthenticationSignIn: NextPage<
     IAuthentication.IProps,
     IAuthentication.InitialProps
 > = ({ t, i18n }) => {
@@ -47,7 +47,7 @@ export const Authentication: NextPage<
                     )}
                 >
                     <span className="font-semibold text-xxl mb-5">
-                        ثبت نام در نیدرو
+                        ورود و یا ثبت نام
                     </span>
                     <div
                         dir="rtl"
@@ -67,26 +67,12 @@ export const Authentication: NextPage<
                             />
                         </div>
 
-                        <div className="flex justify-between mt-5">
-                            <Input
-                                id="name"
-                                placeholder=" نام خود را وارد کنید"
-                                label="نام"
-                                className="flex-1 ml-6"
-                            />
-                            <Input
-                                id="family"
-                                placeholder="نام خانوادگی خود را وارد کنید"
-                                label="نام خانوادگی"
-                                className="flex-1"
-                            />
-                        </div>
-
                         <div className="mt-5">
                             <Input
-                                id="email"
-                                placeholder="آدرس ایمیل خود را وارد کنید"
-                                label=" آدرس ایمیل"
+                                id="password"
+                                placeholder="رمز عبور خود را وارد کنید"
+                                inputDirection="rtl"
+                                label="رمز عبور"
                                 isFullWidth
                             />
                         </div>
@@ -94,8 +80,15 @@ export const Authentication: NextPage<
                         <div className="flex justify-between mt-6">
                             <CheckBox
                                 id="condition"
-                                label="شرایط و قوانین را میپذیرم"
+                                label="من را به خاطر بسپار"
                             />
+
+                            <span className=" text-sm text-main-color font-light">
+                                رمز عبور خود را فراموش کردید ؟
+                            </span>
+                        </div>
+
+                        <div className="flex justify-end mt-8">
                             <Button
                                 styles={{ maxWidth: "230px" }}
                                 isFullWidth
@@ -148,4 +141,4 @@ export const Authentication: NextPage<
 //     return { namespacesRequired: ["common"] };
 // };
 
-export default withTranslation("common")(Authentication);
+export default withTranslation("common")(AuthenticationSignIn);
