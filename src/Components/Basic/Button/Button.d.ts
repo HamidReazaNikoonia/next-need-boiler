@@ -48,7 +48,7 @@ declare namespace IButton {
          */
         as?: React.ReactElement;
         className?: any;
-        variant?: "danger" | "primary" | "bg-none";
+        variant?: "danger" | "primary" | "bg-none" | "info";
         /**
          * Custom Styles will be merged
          */

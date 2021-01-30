@@ -34,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
             isFullWidth,
             leftIcon,
             rightIcon,
-            iconSpacing,
+            iconSpacing = "20px",
             spinner,
             variant = "primary",
             styles,
@@ -69,6 +69,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
 
         return (
             <Component
+                dir="rtl"
                 disabled={isDisabled || isLoading}
                 ref={ref}
                 type={as ? undefined : type}
@@ -76,8 +77,12 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
                 className={combinedClassNames}
                 {...props}
             >
-                {leftIcon && !isLoading && (
-                    <ButtonIcon mr={iconSpacing} children={leftIcon} />
+                {rightIcon && !isLoading && (
+                    <ButtonIcon
+                        className="px-3"
+                        ml={iconSpacing}
+                        children={rightIcon}
+                    />
                 )}
                 {isLoading && (
                     <ButtonSpinner
@@ -92,8 +97,12 @@ export const Button = React.forwardRef<HTMLButtonElement, IButton.IProps>(
                           <span style={{ opacity: 0 }} children={children} />
                       )
                     : children}
-                {rightIcon && !isLoading && (
-                    <ButtonIcon ml={iconSpacing} children={rightIcon} />
+                {leftIcon && !isLoading && (
+                    <ButtonIcon
+                        className="px-3"
+                        mr={iconSpacing}
+                        children={leftIcon}
+                    />
                 )}
             </Component>
         );

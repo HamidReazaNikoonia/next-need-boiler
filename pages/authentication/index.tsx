@@ -15,6 +15,9 @@ import { Button } from "@Components/Basic/Button";
 import styles from "./style.module.scss";
 import SVG from "../../public/static/svg/auth_svg.svg";
 import LOGO from "../../public/static/svg/logo.svg";
+
+import GoogleIcon from "../../public/static/svg/icons-google.svg";
+import FBIcon from "../../public/static/svg/icons-facebook.svg";
 // #endregion Local Imports
 
 // #region Interface Imports
@@ -93,17 +96,44 @@ export const Authentication: NextPage<
                                 id="condition"
                                 label="شرایط و قوانین را میپذیرم"
                             />
-                            <Button className="" variant="primary">
+                            <Button
+                                styles={{ maxWidth: "230px" }}
+                                isFullWidth
+                                variant="success"
+                            >
                                 ادامه
                             </Button>
                         </div>
 
-                        <div className="relative mt-10 h-px bg-gray-300">
+                        <div className="relative mt-16 h-px bg-gray-300">
                             <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
                                 <span className="bg-white px-4 text-xs text-gray-500 uppercase">
                                     ورود یا ثبت نام با
                                 </span>
                             </div>
+                        </div>
+
+                        <div
+                            id="authButton"
+                            className="flex mt-5 justify-between"
+                        >
+                            <Button
+                                variant="info"
+                                isFullWidth
+                                rightIcon={<GoogleIcon />}
+                                className="ml-6"
+                                styles={{ justifyContent: "end" }}
+                            >
+                                گوگل
+                            </Button>
+                            <Button
+                                variant="info"
+                                isFullWidth
+                                rightIcon={<FBIcon />}
+                                styles={{ justifyContent: "end" }}
+                            >
+                                فیسبوک
+                            </Button>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 .btn {
-    @apply px-6 py-1 text-center ;
+    @apply px-6 py-3 text-xxs font-light text-center ;
     border-radius: 24px;
     transition: all 0.9 ease;
 }
@@ -11,6 +11,14 @@
 
 .btn-primary {
     @apply bg-main-color text-white;
+}
+
+.btn-success {
+    @apply bg-green text-white;
+}
+
+.btn-info {
+    @apply bg-semi-white text-sub-text-color border border-border-color-ligth py-2 text-right;
 }
 
 .btn-bg-none {

@@ -10,6 +10,7 @@ exports[`Components LocaleButton with isActive=true should match snapshot 1`] = 
 <div>
   <button
     class="c0"
+    dir="rtl"
     style="display: inline-flex; appearance: none; align-items: center; justify-content: center; transition: all 250ms; user-select: none; position: relative; white-space: nowrap; vertical-align: middle; outline: none; width: auto;"
   >
     tr

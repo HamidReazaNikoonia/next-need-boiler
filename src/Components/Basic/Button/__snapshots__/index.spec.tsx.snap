@@ -4,6 +4,7 @@ exports[`Basic Components Button should match snapshot 1`] = `
 <div>
   <button
     class=""
+    dir="rtl"
     style="display: inline-flex; appearance: none; align-items: center; justify-content: center; transition: all 250ms; user-select: none; position: relative; white-space: nowrap; vertical-align: middle; outline: none; width: auto;"
   >
     Test
