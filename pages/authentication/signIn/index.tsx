@@ -83,7 +83,7 @@ export const AuthenticationSignIn: NextPage<
                                 label="من را به خاطر بسپار"
                             />
 
-                            <span className=" text-sm text-main-color font-light">
+                            <span className=" cursor-pointer text-sm text-main-color font-light">
                                 رمز عبور خود را فراموش کردید ؟
                             </span>
                         </div>
@@ -94,7 +94,7 @@ export const AuthenticationSignIn: NextPage<
                                 isFullWidth
                                 variant="success"
                             >
-                                ادامه
+                                ورود به حساب کاربری
                             </Button>
                         </div>
 
