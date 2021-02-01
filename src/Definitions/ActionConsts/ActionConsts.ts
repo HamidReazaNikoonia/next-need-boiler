@@ -1,4 +1,9 @@
 export const ActionConsts = {
+    Sample: {
+        ResetReducer: "Sample_ResetReducer",
+        SetReducer: "Sample_SetReducer"
+    },
+
     RequestOrder: {
         ResetReducer: "RequestOrder_ResetReducer",
         SetReducer: "RequestOrder_SetReducer"

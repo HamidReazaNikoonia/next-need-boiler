@@ -1,4 +1,5 @@
 .faIcons {
+    @apply font-semibold;
     font-size: 1.2rem;
     transition: opacity 0.4s ease;
     cursor: pointer;
@@ -31,4 +32,23 @@ li.active::before {
 
 .menuList li > a {
     @apply pr-4 text-base font-bold;
+}
+
+.bottomCard {
+    @apply relative flex items-end bottom-0 bg-ligth-blue px-6 rounded-lg w-48 h-48;
+    right: 35px;
+
+}
+
+.bottomCard svg {
+    @apply absolute;
+    opacity: 0.3;
+    top:-70px;
+    transform: scale(0.7);
+}
+
+@media screen and (min-height: 800px) {
+    .bottomCard svg {
+        opacity: 1;
+    }
 }

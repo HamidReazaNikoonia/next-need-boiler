@@ -16,6 +16,13 @@
 @import 'typography';
 
 
+@font-face {
+    font-family: "iconly";
+    src: url("../../public/static/fonts/Iconly---Bold.eot") format("eot"),
+         url("../../public/static/fonts/Iconly---Bold.woff") format("woff"),
+         url("../../public/static/fonts/Iconly---Bold.ttf") format("ttf"),
+         url("../../public/static/fonts/Iconly---Bold.svg") format("svg");
+  }
 
 body {
     font-family: 'Vazir';
@@ -28,4 +35,9 @@ body {
 
 .text-xxs {
     font-weight: 300;
+}
+
+i {
+    font-size: 1.3rem;
+    font-style: normal;
 }

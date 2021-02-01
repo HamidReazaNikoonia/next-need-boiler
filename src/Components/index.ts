@@ -11,3 +11,4 @@ export { ToggleSwitch } from "@Components/ToggleSwitch";
 export { Card } from "@Components/Card";
 export { Avatar } from "@Components/Avatar";
 export { CheckBox } from "@Components/CheckBox";
+export { Button } from "@Components/Basic/Button";

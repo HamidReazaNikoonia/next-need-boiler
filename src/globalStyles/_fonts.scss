@@ -22,3 +22,24 @@ $content-font-weight: 400;
   font-weight: $content-font-weight;
   color: $color-text;
 }
+
+.iconly-boldArrow---Left-2:before {
+  content: "\e909";
+}
+.iconly-boldArrow---Left-3:before {
+  content: "\e90a";
+}
+.iconly-boldArrow---Left-Circle:before {
+  content: "\e90b";
+}
+.iconly-boldArrow---Left-Square:before {
+  content: "\e90c";
+}
+.iconly-boldArrow---Left:before {
+  content: "\e90d";
+}
+
+
+.iconly-boldProfile:before {
+  content: "\e94b";
+}
