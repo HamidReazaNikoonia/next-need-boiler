@@ -3,6 +3,7 @@ export declare module ICard {
         className?: any;
         children?: any;
         colored?: any;
+        rounded?: "md" | "lg";
     }
 
     export interface IState {}

@@ -1,7 +1,7 @@
 export default {
     // Card
     card: {
-        base: "min-w-0 rounded-md shadow-xs overflow-hidden",
+        base: "min-w-0 shadow-xs overflow-hidden",
         default: "bg-white dark:bg-gray-800",
     },
     cardBody: {
@@ -9,7 +9,7 @@ export default {
     },
     // Avatar
     avatar: {
-        base: "relative rounded-lg inline-block border border-border-color",
+        base: "relative inline-block border border-border-color",
         size: {
             large: "w-30 h-30",
             regular: "w-20 h-20",

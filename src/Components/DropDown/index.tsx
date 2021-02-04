@@ -134,6 +134,8 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
         onSelect,
         borderRadius = "sm",
         bgColor,
+        className,
+        heigth = "52px",
     } = props;
 
     // Keep track of whether the dropdown is open or not.
@@ -146,14 +148,14 @@ export const DropDown: React.FunctionComponent<IDropDown.IProps> = (
         onSelect(id, item);
     };
     return (
-        <div className="w-full">
+        <div className={cx("w-full", className)}>
             <DropDownLabel id={id}>{label}</DropDownLabel>
 
             <div className="relative cursor-pointer">
                 {/*  Toggle the dropdown if the button is clicked */}
                 <span
                     role="button"
-                    style={{ minHeight: "52px" }}
+                    style={{ heigth }}
                     onClick={() => setActive(!isActive)}
                     className={cx(
                         "inline-block w-full overflow-hidden border  shadow-sm",

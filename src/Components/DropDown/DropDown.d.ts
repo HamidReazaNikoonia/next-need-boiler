@@ -119,6 +119,7 @@ export declare module IDropDown {
         placeHolder?: string;
         label?: string;
         options: Array;
+        heigth?: string;
     }
 
     export interface IState {}

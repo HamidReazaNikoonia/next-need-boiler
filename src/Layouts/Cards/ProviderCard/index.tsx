@@ -14,6 +14,7 @@ const ProviderCard: React.FunctionComponent<IProviderCard.IProps> = () => {
                 <div className="flex ">
                     <div className="flex flex-1">
                         <Avatar
+                            square
                             size="regular"
                             badge
                             src="https://i.pinimg.com/736x/53/ff/05/53ff0591adc2b77ac000aca68791365a.jpg"

@@ -15,13 +15,24 @@ import { ICard } from "./Card";
 export const Card: React.FunctionComponent<ICard.IProps> = (
     props: ICard.IProps
 ) => {
-    const { className, children, colored = false, ...other } = props;
+    const {
+        className,
+        children,
+        colored = false,
+        rounded = "md",
+        ...other
+    } = props;
     const { card } = useContext(ThemeContext);
 
     const baseStyle = card.base;
     const uncoloredStyle = card.default;
 
-    const cls = cx(baseStyle, !colored && uncoloredStyle, className);
+    const cls = cx(
+        baseStyle,
+        !colored && uncoloredStyle,
+        className,
+        `rounded-${rounded}`
+    );
 
     return (
         <div className={cls} {...other}>

@@ -25,6 +25,7 @@ export const Avatar: React.FunctionComponent<IAvatar.IProps> = (
         name,
         className,
         badge,
+        square = false,
         ...other
     } = props;
     const { avatar } = React.useContext(ThemeContext);
@@ -40,13 +41,14 @@ export const Avatar: React.FunctionComponent<IAvatar.IProps> = (
         small: avatar?.size.small,
     };
 
-    const cls = cx(baseStyle, sizeStyles[size], className);
+    const borderRadius = square ? "rounded-lg" : "rounded-full";
+    const cls = cx(baseStyle, sizeStyles[size], borderRadius, className);
 
     return (
         <div className={cls} {...other}>
             {hasImgNotFailing ? (
                 <img
-                    className="object-cover w-full h-full rounded-lg"
+                    className={cx("object-cover w-full h-full", borderRadius)}
                     src={src}
                     srcSet={srcSet}
                     alt={name}
